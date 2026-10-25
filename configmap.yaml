@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: togglemaster-config
+  namespace: togglemaster
+data:
+  AUTH_SERVICE_URL: "http://auth-service:8001"
+  FLAG_SERVICE_URL: "http://flag-service:8002"
+  TARGETING_SERVICE_URL: "http://targeting-service:8003"
+  AWS_REGION: "REPLACE_WITH_AWS_REGION"
+  AWS_SQS_URL: "REPLACE_WITH_SQS_QUEUE_URL"
+  AWS_DYNAMODB_TABLE: "ToggleMasterAnalytics"
