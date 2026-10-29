@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
         - name: auth-service
+          # Replace by proper ACCOUNT_ID and AWS_REGION.
           image: ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/togglemaster-auth:latest
           imagePullPolicy: Always
           ports:
@@ -83,6 +84,7 @@ spec:
     spec:
       containers:
         - name: flag-service
+          # Replace by proper ACCOUNT_ID and AWS_REGION.
           image: ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/togglemaster-flag:latest
           imagePullPolicy: Always
           command: ["gunicorn"]
@@ -153,6 +155,7 @@ spec:
     spec:
       containers:
         - name: targeting-service
+          # Replace by proper ACCOUNT_ID and AWS_REGION.
           image: ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/togglemaster-targeting:latest
           imagePullPolicy: Always
           command: ["gunicorn"]
@@ -212,7 +215,6 @@ metadata:
   name: evaluation-service
   namespace: togglemaster
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: evaluation-service
@@ -223,6 +225,7 @@ spec:
     spec:
       containers:
         - name: evaluation-service
+          # Replace by proper ACCOUNT_ID and AWS_REGION.
           image: ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/togglemaster-evaluation:latest
           imagePullPolicy: Always
           ports:
@@ -300,7 +303,6 @@ metadata:
   name: analytics-service
   namespace: togglemaster
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: analytics-service
@@ -311,6 +313,7 @@ spec:
     spec:
       containers:
         - name: analytics-service
+          # Replace by proper ACCOUNT_ID and AWS_REGION.
           image: ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/togglemaster-analytics:latest
           imagePullPolicy: Always
           command: ["gunicorn"]
